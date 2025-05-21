@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "e8f63b92-4c71-4e5e-a9d3-c3e9a5a2b8d4",
+		"name": "Transactions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get User Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/transactions/user/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions",
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user whose transactions you want to retrieve"
+						}
+					]
+				},
+				"description": "Get all transactions for a specific user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/transactions/user/:userId/summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions",
+						"user",
+						":userId",
+						"summary"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user whose transaction summary you want to retrieve"
+						}
+					]
+				},
+				"description": "Get transaction summary with totals and balance"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"expense\",\n  \"amount\": 50,\n  \"description\": \"Grocery shopping\",\n  \"category\": \"CATEGORY_ID_HERE\",\n  \"date\": \"2024-05-22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/transactions/user/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions",
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user creating the transaction"
+						}
+					]
+				},
+				"description": "Create a new transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/transactions/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "TRANSACTION_ID_HERE",
+							"description": "The ID of the transaction to retrieve"
+						}
+					]
+				},
+				"description": "Get a single transaction by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Transaction",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 75,\n  \"description\": \"Updated grocery shopping\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/transactions/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "TRANSACTION_ID_HERE",
+							"description": "The ID of the transaction to update"
+						}
+					]
+				},
+				"description": "Update a transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/transactions/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transactions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "TRANSACTION_ID_HERE",
+							"description": "The ID of the transaction to delete"
+						}
+					]
+				},
+				"description": "Delete a transaction"
+			},
+			"response": []
+		}
+	]
+}

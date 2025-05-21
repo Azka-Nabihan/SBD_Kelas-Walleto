@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "2934a879-6e2d-43b5-9d51-1f2e9a12b572",
+		"name": "Goals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Goals for User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/goals/user/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goals",
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user whose goals you want to retrieve"
+						}
+					]
+				},
+				"description": "Get all goals for a specific user"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Goal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"New Car\",\n  \"targetAmount\": 25000,\n  \"deadline\": \"2024-12-31\",\n  \"description\": \"Saving for a new car\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/goals/user/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goals",
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user creating the goal"
+						}
+					]
+				},
+				"description": "Create a new savings goal"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Goal by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/goals/:goalId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goals",
+						":goalId"
+					],
+					"variable": [
+						{
+							"key": "goalId",
+							"value": "GOAL_ID_HERE",
+							"description": "The ID of the goal to retrieve"
+						}
+					]
+				},
+				"description": "Get goal by its ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Goal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Updated Goal Name\",\n  \"targetAmount\": 30000,\n  \"deadline\": \"2025-06-30\",\n  \"description\": \"Updated goal description\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/goals/:goalId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goals",
+						":goalId"
+					],
+					"variable": [
+						{
+							"key": "goalId",
+							"value": "GOAL_ID_HERE",
+							"description": "The ID of the goal to update"
+						}
+					]
+				},
+				"description": "Update an existing goal"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Goal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/goals/:goalId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goals",
+						":goalId"
+					],
+					"variable": [
+						{
+							"key": "goalId",
+							"value": "GOAL_ID_HERE",
+							"description": "The ID of the goal to delete"
+						}
+					]
+				},
+				"description": "Delete a goal"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Contribution",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/goals/:goalId/contribute",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goals",
+						":goalId",
+						"contribute"
+					],
+					"variable": [
+						{
+							"key": "goalId",
+							"value": "GOAL_ID_HERE",
+							"description": "The ID of the goal to contribute to"
+						}
+					]
+				},
+				"description": "Add a contribution to a savings goal"
+			},
+			"response": []
+		}
+	]
+}

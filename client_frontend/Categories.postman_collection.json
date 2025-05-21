@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "d57f9b23-4a81-4e8e-b06c-a9f7d2e9b5c2",
+		"name": "Categories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get User Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/categories/user/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user whose categories you want to retrieve"
+						}
+					]
+				},
+				"description": "Get all categories for a specific user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Category Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/categories/user/:userId/summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						"user",
+						":userId",
+						"summary"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user whose category summary you want to retrieve"
+						}
+					]
+				},
+				"description": "Get category summary with transaction counts and totals"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Groceries\",\n  \"type\": \"expense\",\n  \"balance\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/categories/user/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						"user",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user creating the category"
+						}
+					]
+				},
+				"description": "Create a new category"
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Categories from Tags",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/categories/user/:userId/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						"user",
+						":userId",
+						"generate"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user for whom to generate categories"
+						}
+					]
+				},
+				"description": "Generate categories from transaction tags"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Categorized Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/categories/user/:userId/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						"user",
+						":userId",
+						"transactions"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "YOUR_USER_ID",
+							"description": "The ID of the user whose categorized transactions you want to retrieve"
+						}
+					]
+				},
+				"description": "Get categorized transactions for a user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Category by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/categories/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CATEGORY_ID_HERE",
+							"description": "The ID of the category to retrieve"
+						}
+					]
+				},
+				"description": "Get a single category by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Updated Category\",\n  \"balance\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/categories/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CATEGORY_ID_HERE",
+							"description": "The ID of the category to update"
+						}
+					]
+				},
+				"description": "Update a category"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/categories/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"categories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "CATEGORY_ID_HERE",
+							"description": "The ID of the category to delete"
+						}
+					]
+				},
+				"description": "Delete a category"
+			},
+			"response": []
+		}
+	]
+}
