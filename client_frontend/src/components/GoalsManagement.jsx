@@ -12,10 +12,8 @@ export default function GoalsManagement() {
   const [showForm, setShowForm] = useState(false)
   const [contributionAmount, setContributionAmount] = useState('')
   const [selectedGoal, setSelectedGoal] = useState(null)
-  
-  // API base URL from environment variable
-  const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api'
-  
+    // API base URL from environment variable
+  const API_URL = import.meta.env.VITE_API_BASE_URL || 'https://sbd-kelas.vercel.app/api'
   // Get user info from localStorage
   const getUserId = () => {
     const user = JSON.parse(localStorage.getItem('user') || '{}')

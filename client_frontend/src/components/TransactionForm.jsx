@@ -9,9 +9,8 @@ import toast from 'react-hot-toast'
 export default function TransactionForm() {
   const [loading, setLoading] = useState(false)
   const [categories, setCategories] = useState([])
-  
-  // API base URL from environment variable
-  const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api'
+    // API base URL from environment variable
+  const API_URL = import.meta.env.VITE_API_BASE_URL || 'https://sbd-kelas.vercel.app/api'
   
   // Get user info from localStorage
   const getUserId = () => {
