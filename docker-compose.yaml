@@ -1,0 +1,40 @@
+
+services:
+  # Backend Service
+  server-backend:
+    build: ./server-backend
+    container_name: server_backend_c
+    restart: unless-stopped
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 3000
+      MONGOTOKEN: ${MONGOTOKEN}
+    ports:
+      - "3001:3000"  # External 3001, Internal 3000
+    volumes:
+      - ./server-backend:/app
+      - /app/node_modules
+    networks:
+      - walleto-network
+
+  # Frontend Service  
+  client_frontend:
+    build: ./client_frontend
+    container_name: client_frontend_c
+    restart: unless-stopped
+    environment:
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:3001/api}
+    ports:
+      - "5173:5173"  # Vite dev server port
+    depends_on:
+      - server-backend
+    volumes:
+      - ./client_frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    networks:
+      - walleto-network
+
+networks:
+  walleto-network:
+    driver: bridge
